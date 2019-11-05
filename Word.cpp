@@ -16,8 +16,7 @@ int main(){
     string a;
     cin>>a;
 
-    int hashCaps[27]={0};
-    int hashSmall[27]={0};
+
 
     int countCaps=0;
     int countSmall=0;
@@ -26,10 +25,10 @@ int main(){
 
         if(a[i]>=65&& a[i]<=90){
             countCaps++;
-            hashCaps[a[i]-65]++;
+
         }else{
             countSmall++;
-            hashSmall[a[i]-97]++;
+
         }
 
     }
