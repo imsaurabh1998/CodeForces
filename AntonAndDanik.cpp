@@ -24,7 +24,6 @@ int main(){
             hash[1]++;
         }
     }
-
     if(hash[0]==hash[1]) cout<<"Friendship"<<endl;
     else if (hash[0]>hash[1]) cout<<"Anton"<<endl;
     else cout<<"Danik"<<endl;
