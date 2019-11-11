@@ -15,31 +15,45 @@ int main(){
 
     vector<int> list;
     int mn=INT16_MAX;
-    int mx=INT8_MIN;
+    int mx=INT16_MIN;
 
     while(n-->0){
         int temp;
         cin>>temp;
         list.push_back(temp);
 
-        mn=min(mx,temp);
-        mx=max(mn,temp);
+        mn=min(mn,temp);
+        mx=max(mx,temp);
     }
 
-    int count=0;
-    for(int i=0;i<list.size();i++){
 
-        for(int j=1+1;j<list.size();j++){
-            if(list[i]<list[j]){
-                swap(list[i],list[j]);
-                count++;
+       int count=0;
+        int minIndex=0;
+        int maxIndex=-1;
+        int minus=0;
+
+
+    if(list[0]==mx && list[list.size()-1]==mn) {
+        cout<<count<<endl;
+        return 0;
+    }
+
+        for(int i=0;i<list.size();i++){
+
+            if(list[i]==mx && maxIndex==-1){
+                count=1;
+                maxIndex=i;
+
+            }else if(list[i]==mn){
+                minIndex=i;
+
+                minus=(count==0)?1:0;
+
             }
-            if(list[0]==mx && list[list.size()-1]==mn) break;
         }
-        if(list[0]==mx && list[list.size()-1]==mn) break;
-    }
+        int result=maxIndex+(list.size()-1-minIndex)-minus;
 
-    cout<<count<<endl;
+    cout<<result<<endl;
     return 0;
 }
 
