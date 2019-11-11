@@ -13,4 +13,19 @@ int main(){
 
     int totalHours=240;
 
+    int count=0;
+    int problemTime=0;
+    int i=1;
+    while(n>count){
+
+        problemTime+=(5*i);
+        if((totalHours-k)>=problemTime)
+            count++;
+        else break;
+        i++;
+
+    }
+
+    cout<<count<<endl;
+
 }
