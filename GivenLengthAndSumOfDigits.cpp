@@ -11,23 +11,48 @@ int main(){
 
     int m,s;
     cin>>m>>s;
-vector<int> list;
 
-    if(s<=(9*m)){
 
-        int maxSum=0;
-        int i=1;
-        int rem=0;
-       for(int j=0;j<s;j++){
-            maxSum+=9*i;
+    if (s == 0)
+    {
+        cout << (m == 1 ? "0 0" : "-1 -1") << endl;
+        return 0;
+    }
+    string a="",min("");
+    int t;
+    int sam=s;
+    int i=0;
+    while(i++<m){
+        if(s>=9){
+            a+="9";
+            s-=9;
 
-            if(9>s)
-            rem=(s-maxSum);
+        }else if(s<9){
+            a+=s+'0';
+            s=0;
 
+        }else{
+            a+="0";
         }
 
-    }else{
-        cout<<"-1"<<" "<<"-1"<<endl;
     }
+    if (s > 0)
+    {
+        cout << "-1 -1" << endl;
+        return 0;
+    }
+
+    for(int i=a.length()-1;i>=0;i--)
+        min+=a[i];
+
+    int k=0;
+
+    for(;min[k]=='0';k++);
+
+    min[0]++;
+min[k]--;
+    cout<<min<<" "<<a<<endl;
+
+
 }
 
