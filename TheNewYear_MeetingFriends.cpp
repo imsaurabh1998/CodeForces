@@ -20,11 +20,11 @@ int main(){
 
     sort(list.begin(),list.end());
 
-    int mid=list[1];
-    int firstDistance=mid-list[0];
-    int lastDistance=list[2]-mid;
+//    int mid=list[1];
+//    int firstDistance=mid-list[0];
+//    int lastDistance=list[2]-mid;
 
-    cout<<firstDistance+lastDistance<<endl;
+    cout<<list[2]-list[0]<<endl;
 
 }
 
