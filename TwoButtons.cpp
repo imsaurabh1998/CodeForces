@@ -11,45 +11,64 @@ using namespace std;
 
 int main() {
 
-    int n,k;
-    cin >> n>>k;
-    int minCount = INT16_MAX;
+    int n,m;
+    cin >> n>>m;
+//    int minCount = INT16_MAX;
+//
+//    if (n > k) {
+//        cout << (n - k) << endl;
+//        return 0;
+//    }
+//    else {
+//
+//        for (int i = n; i >= 1; i--) {
+//
+//
+//            int sum = i;
+//            int count = 0;
+//
+//           // cout << "Value of sum: " << sum << endl;
+//
+//            while (sum < k) {
+//
+//                sum *= 2;
+//                count++;
+//
+//                if (sum == k) {
+//                    minCount = min(minCount, count+(n-i));
+//                   // cout << minCount << endl;
+//
+//                }
+//            }
+//
+//            if(sum>k){
+//                count += (sum - k) + (n - i);
+//                minCount = min(minCount, count);
+//               // cout << minCount << endl;
+//            }
+//        }
+//    }
+//
+//    cout << minCount << endl;
 
-    if (n > k) {
-        cout << (n - k) << endl;
-        return 0;
-    }
-    else {
+        int w(0);
 
-        for (int i = n; i >= 1; i--) {
+        while(n!=m){
 
+            if(m>n){
 
-            int sum = i;
-            int count = 0;
-
-           // cout << "Value of sum: " << sum << endl;
-
-            while (sum < k) {
-
-                sum *= 2;
-                count++;
-
-                if (sum == k) {
-                    minCount = min(minCount, count+(n-i));
-                   // cout << minCount << endl;
-
+                if(m%2==0){
+                    m/=2; w++;
                 }
-            }
-
-            if(sum>k){
-                count += (sum - k) + (n - i);
-                minCount = min(minCount, count);
-               // cout << minCount << endl;
+                else {
+                    m++; w++;
+                }
+            }else{
+                m++; w++;
             }
         }
-    }
 
-    cout << minCount << endl;
+        cout<<w<<endl;
 
 
 }
