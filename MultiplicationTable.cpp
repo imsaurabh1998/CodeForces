@@ -16,18 +16,7 @@ int main(){
 
     for(int i=1;i<=n;i++){
 
-       int num=i;
-       int totalCount=n;
-       while(totalCount-->0){
-           if(num>k)break;
-
-           if(num==k){
-               count++;
-               break;
-           }
-           num+=i;
-
-       }
+      if(k%i==0 and k/i<=n) count++;
     }
 
     cout<<count<<endl;
