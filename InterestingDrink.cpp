@@ -8,7 +8,7 @@
 
 using namespace std;
 
-int b_Serch(int start, int end, vector<int> list, int val);
+//int b_Serch(int start, int end, vector<int> list, int val);
 
 int main() {
 
@@ -33,24 +33,26 @@ int main() {
         cin >> num;
 
 
-        cout << b_Serch(0, list.size() - 1, list, num) << endl;
+      vector<int> :: iterator  upper=upper_bound(list.begin(),list.end(),num);
+
+      cout<<(upper-list.begin())<<endl;
     }
 }
 
-int b_Serch(int start, int end, vector<int> list, int val) {
-
-    if (start <= end) {
-
-        int mid = (start + end) / 2;
-
-        if (list[mid] == val) return mid + 1;
-        else if (list[mid] > val) {
-            return b_Serch(start, mid - 1, list, val);
-        }
-        else {
-            return b_Serch(mid + 1, end, list, val);
-        }
-    }
-
-    return start;
-}
+//int b_Serch(int start, int end, vector<int> list, int val) {
+//
+//    if (start <= end) {
+//
+//        int mid = (start + end) / 2;
+//
+//        if (list[mid] == val) return mid + 1;
+//        else if (list[mid] > val) {
+//            return b_Serch(start, mid - 1, list, val);
+//        }
+//        else {
+//            return b_Serch(mid + 1, end, list, val);
+//        }
+//    }
+//
+//    return start;
+//}
