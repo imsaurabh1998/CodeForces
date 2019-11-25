@@ -11,7 +11,7 @@ int main(){
     int n,k;
     cin>>n>>k;
 
-    if(n>k){
+    if(n<k){
         cout<<-1<<endl;
         return 0;
     }
@@ -20,13 +20,12 @@ int main(){
         return 0;
     }
 
-    int count=0;
-    while(true){
+    int quotent=n/2;
+    int rem=n%2;
 
-        int qotent=(n%2==0) ?n/2 : n/2+1;
-        if(qotent%k==0){
-            count=qotent;
-            break;
-        }
-    }
+    int minStep=quotent+rem;
+
+    int result=(minStep%k==0) ? minStep: (minStep+(k-minStep%k));
+
+    cout<<result<<endl;
 }

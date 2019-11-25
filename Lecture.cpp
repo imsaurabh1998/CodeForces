@@ -26,7 +26,6 @@ int main() {
 		cin >> a >> b;
 		list.insert(pair<string, string>(a, b));
 
-
 	}
 
 	while (n-- > 0) {
