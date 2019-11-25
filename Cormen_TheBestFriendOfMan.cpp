@@ -26,12 +26,11 @@ int main(){
 
     for(int i=0;i<list.size()-1;i++){
 
-        if((list[i]+list[i+1])<=k){
-            num=k-((list[i]+list[i+1]));
-            mx=max(num,mx);
+        if((list[i]+list[i+1])<k){
+            num+=k-(list[i]+list[i+1]);
         }
     }
-    cout<<mx<<endl;
+    cout<<num<<endl;
 
 
     list2.push_back(list[0]);
