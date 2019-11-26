@@ -118,7 +118,6 @@ Date-25Nov
        ->SortTheArray
 
 Date-26Nov
-       ->Exams(479c)
        ->RandomTeams
        ->DataCenter
        ->FileName
@@ -126,3 +125,9 @@ Date-26Nov
        ->DivisibityByEight
        ->Fence
        ->SortTheArray
+
+Date-27Nov
+       ->Sale(34B)
+       ->Exam(479C)
+       ->PresentFromLena
+       ->TeamForming(1092B)
