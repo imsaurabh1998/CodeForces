@@ -9,21 +9,55 @@
 
 using namespace std;
 
+bool checkDigit(int num);
+
 int main() {
 
-    string a;
+    int a;
     cin >> a;
 
-    int checker = 0;
+    long long int num=INT32_MAX;
 
-    for (int i = 0; i < a.length(); i++) {
-        checker += a[i] - '0';
+    if(a==1){
+        std::cout<<19<<endl;
+        return 0;
+    }
+    if(a==2) {
+        std::cout<<28<<endl;
+        return 0;
     }
 
-    if (checker < 10) {
-        string app = to_string(10 - checker);
-        a += app;
+    int count=2;
+    int i=29;
+    for(;i<num;i++){
+
+        if(checkDigit(i)){
+            if(count==a){
+                break;
+            }
+            count++;
+        }
     }
 
-    cout << a;
+    std::cout<<i<<endl;
+
+
+}
+
+bool checkDigit(int num){
+
+    string number=to_string(num);
+
+    int checkSum=0;
+    for(int i=0;i<number.length();i++){
+
+        int a=number[i]-'0';
+        checkSum+=a;
+
+        if(checkSum>10) return false;
+    }
+
+    if(checkSum==10) return true;
+
+    return false;
 }
