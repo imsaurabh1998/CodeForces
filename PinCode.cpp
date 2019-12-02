@@ -37,9 +37,13 @@ int main() {
         string val1;
         cin >> cas;
         unordered_map<string, int> m;
+        vector<string> list;
+       // vector<pair<string,int>> vPair;
+
         while (cas-- > 0) {
             cin >> val1;
             m[val1]++;
+            //vPair.push_back(pair<string,int>(val1,1));
 
         }
 
@@ -52,13 +56,14 @@ int main() {
             char valArr[] = { '0','1','2','3','4','5','6','7','8','9' };
             int loopThrough = 0;
             string stringer;
+            list.push_back(a.first);
             while(loopChecker > 1) {
 
                 stringer = a.first;
                 stringer[0] = valArr[loopThrough++];
                 auto mapChecker = m.find(stringer);
                 if (mapChecker==m.end()) {
-
+                    list.push_back(stringer);
                     m[stringer]++;
                     loopChecker--;
 
@@ -70,6 +75,10 @@ int main() {
         cout << count << endl;
         for (auto j : m) {
             cout << j.first << endl;
+        }
+
+        for(string a : list){
+            cout<<a<<" ";
         }
 
     }
