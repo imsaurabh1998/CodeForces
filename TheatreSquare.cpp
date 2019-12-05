@@ -10,7 +10,6 @@
 using namespace std;
 
 int main() {
-
     int n,m,a;
     cin >> n>>m>>a;
 
@@ -18,7 +17,6 @@ int main() {
         cout << 1 << endl;
         return 0;
     }
-
     long long int totalWidthFlag = (n % a == 0) ? n / a : (n / a) + 1;
     m -= a;
     long long int totalLengthFlag = 0;
