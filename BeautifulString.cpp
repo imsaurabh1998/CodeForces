@@ -31,31 +31,21 @@ int main(){
 
         if(flag){
 
-            char cArray[INT8_MAX];
-            strcpy(cArray,s.c_str());
-
-            int x=0;
-            char temp[]={'a','b','c'};
-
             for(int i=0;i<s.length();i++){
 
-                if(cArray[i]=='?'){
-                    char t=temp[x++];
-
-                    while(true){
-                        if(t!=cArray[i-1] && t!=cArray[i+1]){
-                            break;
-                        }
-                        if(x==3) x=0;
-                        t=temp[x++];
+                if(s[i]=='?'){
+                    if(s[i]=='?'){
+                        if(s[i-1]!='a'&&s[i+1]!='a')s[i]='a';
+                        else if(s[i-1]!='b'&&s[i+1]!='b')s[i]='b';
+                        else if(s[i-1]!='c'&&s[i+1]!='c')s[i]='c';
                     }
-                    cArray[i]=t;
-                    if(x==3) x=0;
-                }
-            }
 
-            string a(cArray);
-            cout<<a<<endl;
+                    }
+
+                }
+
+
+            cout<<s<<endl;
         }
         else {
             cout<<-1<<endl;
