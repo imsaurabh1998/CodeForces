@@ -16,7 +16,7 @@ using namespace std;
 
 int main() {
 
-    int n,k;
+    ll n,k;
     cin >> n>>k;
 
     map<char,int> m;
@@ -41,7 +41,7 @@ int main() {
     vector<string> list;
     string res;
 
-    for(int i=0;i<s.length();i++)
+    for(ll i=0;i<s.length();i++)
     {
 
         if(m[s[i]]>0)
@@ -58,7 +58,7 @@ int main() {
     ll count = 0;
     for(string value : list)
     {
-        count += (value.length() * (value.length()+1)) / 2;
+        count += ((ll)value.length() * (ll)(value.length()+1)) / 2;
     }
 
     cout << count << endl;
