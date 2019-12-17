@@ -4,6 +4,8 @@
 
 #include<iostream>
 #include<map>
+#include<algorithm>
+#include<bits/stdc++.h>
 
 using namespace std;
 int cutRibbon(int a);
@@ -50,7 +52,44 @@ int main(){
 //
 //    }
 
-cout<<cutRibbon(n);
+//cout<<cutRibbon(n);
+
+vector<int> list;
+list.push_back(a);
+list.push_back(b);
+list.push_back(c);
+
+sort(list.begin(),list.end());
+
+a=list[0];
+b=list[1];
+c=list[2];
+
+
+    if(n%a==0){
+        cout<<n/a<<endl;
+    }else{
+
+        int rem=n%a;
+        int total=(n/a)*a;
+        int count=n/a;
+        while(true){
+
+            if((n-total)%b==0){
+
+                count+=(n-total)/b;
+                break;
+            }else if((n-total)%c==0){
+                count+=(n-total)/c;
+                break;
+            }
+            total-=a;
+            count--;
+        }
+        cout<<count<<endl;
+    }
+
+
 
 return 0;
 }
