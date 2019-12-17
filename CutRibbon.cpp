@@ -6,10 +6,13 @@
 #include<map>
 
 using namespace std;
+int cutRibbon(int a);
+
+int a, b,c;
 
 int main(){
 
-    int n,a,b,c;
+    int n;
     cin>>n>>a>>b>>c;
 
 //    map<int,int> m;
@@ -26,25 +29,38 @@ int main(){
 //        }
 //    }
 
-    if(n>(a+b+c)){
-        cout<<n<<endl;
-        return 0;
-    }else if(n==(a+b+c)){
-        cout<<"3"<<endl;
-        return 0;
-    }
-    else if(n>=(a+b)){
-        cout<<"2"<<endl;
-        return 0;
-    }else if(n>=(a+c)){
-        cout<<"2"<<endl;
-        return 0;
-    }else if(n>=(b+c)){
-        cout<<"2"<<endl;
-        return 0;
-    }else{
-        cout<<"1"<<endl;
+//    if(n>(a+b+c)){
+//        cout<<n<<endl;
+//        return 0;
+//    }else if(n==(a+b+c)){
+//        cout<<"3"<<endl;
+//        return 0;
+//    }
+//    else if(n>=(a+b)){
+//        cout<<"2"<<endl;
+//        return 0;
+//    }else if(n>=(a+c)){
+//        cout<<"2"<<endl;
+//        return 0;
+//    }else if(n>=(b+c)){
+//        cout<<"2"<<endl;
+//        return 0;
+//    }else{
+//        cout<<"1"<<endl;
+//
+//    }
 
-    }
+cout<<cutRibbon(n);
+
 return 0;
+}
+
+int cutRibbon(int n){
+
+    if(n==0){
+        return 1;
+    }
+    if(n<0) return 0;
+
+    return max(cutRibbon(n-a),max(cutRibbon(n-b),cutRibbon(n-c)));
 }
