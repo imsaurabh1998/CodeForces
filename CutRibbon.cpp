@@ -54,42 +54,59 @@ int main(){
 
 //cout<<cutRibbon(n);
 
-vector<int> list;
-list.push_back(a);
-list.push_back(b);
-list.push_back(c);
+//vector<int> list;
+//list.push_back(a);
+//list.push_back(b);
+//list.push_back(c);
+//
+//sort(list.begin(),list.end());
+//
+//a=list[0];
+//b=list[1];
+//c=list[2];
+//
+//
+//    if(n%a==0){
+//        cout<<n/a<<endl;
+//    }else{
+//
+//        int rem=n%a;
+//        int total=(n/a)*a;
+//        int count=n/a;
+//        while(true){
+//
+//            if((n-total)%b==0){
+//
+//                count+=(n-total)/b;
+//                break;
+//            }else if((n-total)%c==0){
+//                count+=(n-total)/c;
+//                break;
+//            }
+//            total-=a;
+//            count--;
+//        }
+//        cout<<count<<endl;
+//    }
 
-sort(list.begin(),list.end());
+        int x,y,z;
+        int dp[100007];
+        dp[0]=0;
+        for(int i=1;i<=n;i++){
 
-a=list[0];
-b=list[1];
-c=list[2];
+            x=y=z=-1;
 
+            if(i>=a) x=dp[i-a];
+            if(i>=b) y=dp[i-b];
+            if(i>=c) z=dp[i-c];
 
-    if(n%a==0){
-        cout<<n/a<<endl;
-    }else{
+            if(x==-1 and y==-1 and z==-1) dp[i]=-1;
+            else
+            dp[i]=max(x,max(y,z))+1;
 
-        int rem=n%a;
-        int total=(n/a)*a;
-        int count=n/a;
-        while(true){
-
-            if((n-total)%b==0){
-
-                count+=(n-total)/b;
-                break;
-            }else if((n-total)%c==0){
-                count+=(n-total)/c;
-                break;
-            }
-            total-=a;
-            count--;
         }
-        cout<<count<<endl;
-    }
 
-
+        cout<<dp[n]<<endl;
 
 return 0;
 }
