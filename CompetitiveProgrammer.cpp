@@ -4,6 +4,8 @@
 
 #include<bits/stdc++.h>
 
+typedef ll long long int;
+
 using namespace std;
 
 int main(){
@@ -20,8 +22,8 @@ int main(){
         cin>>val;
         bool allNumZero(true),containZero(false),DivByT(false);
 
-        int tSum=0;
-        for(int i=0;i<val.length();i++){
+        ll tSum=0;
+        for(ll i=0;i<ll(val.length());i++){
 
             if(val[i]!='0') allNumZero=false;
         }
@@ -29,7 +31,7 @@ int main(){
         if(allNumZero) cout<<"red"<<endl;
         else {
 
-            for (int i = 0; i < val.length(); i++) {
+            for (ll i = 0; i < ll(val.length()); i++) {
 
                 if (val[i] == '0') containZero = true;
                 else if ((val[i] - '0') % 2 == 0) DivByT = true;
@@ -37,7 +39,7 @@ int main(){
                 tSum += val[i] - '0';
             }
 
-            if (containZero and DivByT && tSum % 3 == 0) {
+            if (containZero and DivByT and tSum % 3 == 0) {
                 cout << "red" << endl;
             } else {
                 cout << "cyan" << endl;
