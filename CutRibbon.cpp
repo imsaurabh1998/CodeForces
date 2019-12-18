@@ -70,7 +70,7 @@ c=list[2];
         cout<<n/a<<endl;
     }else{
 
-        int rem=n%a;
+        //int rem=n%a;
         int total=(n/a)*a;
         int count=n/a;
         while(true){
