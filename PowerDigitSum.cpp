@@ -9,6 +9,7 @@
 #include <algorithm>
 #include<string>
 using namespace std;
+typedef unsigned long long int ll;
 
 
 int main() {
@@ -22,11 +23,11 @@ int main() {
         int number;
         cin>>number;
 
-        unsigned long long int powVal=pow(2,number);
+        ll powVal = pow(2,number);
 
         string val=to_string(powVal);
 
-        unsigned long long int sum=0;
+        ll sum=0;
         cout<<val<<endl;
         for(int i=0;i<val.length();i++){
 
