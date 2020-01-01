@@ -68,27 +68,58 @@ public:
             temp=parent[temp];
         }
     }
+
+    void snake_ladder(){
+        int board[50]={0};
+        board[2]=13;
+        board[5]=2;
+        board[32]=-2;
+        board[9]=18;
+        board[17]=-13;
+        board[24]=-8;
+        board[18]=11;
+        board[20]=-14;
+        board[24]=-8;
+        board[25]=-10;
+        board[32]=-2;
+        board[34]=22;
+
+        Graph snakeG(100);
+
+        for(int u=0;u<36;u++){
+
+            for(int dice=1;dice<=6;dice++){
+                if(u+dice<=36) {
+                    int v = u + dice + board[u + dice];
+                    snakeG.addEdge(u, v, false);
+                }
+            }
+        }
+
+        snakeG.bfs(0,36);
+    }
 };
 
 int main(){
     Graph g(5);
 
-    g.addEdge(0,1);
-    g.addEdge(0,2);
-    g.addEdge(1,0);
-    g.addEdge(1,3);
-    g.addEdge(3,2);
-    g.addEdge(3,1);
-    g.addEdge(3,4);
-    g.addEdge(2,3);
-    g.addEdge(2,0);
-    g.addEdge(4,3);
+//    g.addEdge(0,1);
+//    g.addEdge(0,2);
+//    g.addEdge(1,0);
+//    g.addEdge(1,3);
+//    g.addEdge(3,2);
+//    g.addEdge(3,1);
+//    g.addEdge(3,4);
+//    g.addEdge(2,3);
+//    g.addEdge(2,0);
+//    g.addEdge(4,3);
+//
+//
+//    //g.printGraph();
+//    g.bfs(0,4);
 
 
-    //g.printGraph();
-    g.bfs(0,4);
-
-
+    g.snake_ladder();
 
 }
 
