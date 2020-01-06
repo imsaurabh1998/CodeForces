@@ -16,6 +16,7 @@ public:
 
     void addEdge(int u, int v,bool biDir=true){
         adjList[u].push_back(v);
+
         if(biDir)
             adjList[v].push_back(u);
     }
