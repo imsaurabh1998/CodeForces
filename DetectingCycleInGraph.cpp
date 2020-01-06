@@ -32,7 +32,7 @@ bool Graph:: detectCycleUtil(list<int> list, int s, bool visited, int parent){
 
     for(int i=0;i<list[s].size();i++){
 
-        if(!visited[adj[s][i]]){
+        if(!visited[list[s][i]]){
             if(detectCycleUtil(list,list[s][i],visited,s)) return true;
         }
 
