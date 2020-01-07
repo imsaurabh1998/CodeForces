@@ -26,7 +26,7 @@ public :
 
 };
 
-bool Graph:: detectCycleUtil(list<int> list, int s, bool visited, int parent){
+bool Graph :: detectCycleUtil(list<int> list, int s, bool visited, int parent){
 
     visited[s]=true;
 
@@ -44,7 +44,7 @@ bool Graph:: detectCycleUtil(list<int> list, int s, bool visited, int parent){
 }
 
 
-void Graph:: detectCycle(){
+void Graph :: detectCycle(){
     bool * visited=new bool[V];
     for(int i=0;i<5;i++){
 
