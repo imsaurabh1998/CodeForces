@@ -24,7 +24,7 @@ public:
 
     void addEdge(int v, int u, bool birdir = true) {
 
-        cout << " Add Edge: " << v << " " << u << endl;
+
 
         adj[v].push_back(u);
         if (birdir) adj[u].push_back(v);
@@ -67,16 +67,25 @@ public:
     void printVertex() {
         list<int> ::iterator i;
 
-        cout << adj->size() << endl;
 
-        for (int a : *adj) {
-            cout << "hi" << endl;
-            cout << a << endl;
-            for (i = adj[a].begin(); i != adj[a].end(); i++) {
-                cout << *i << ":-> ";
-            }
-            cout << endl;
-        }
+        cout<<adj->
+
+//        for (int &a : *adj) {
+//            cout << "hi" << endl;
+//            cout << a << endl;
+//            for (i = adj[a].begin(); i != adj[a].end(); i++) {
+//                cout << *i << ":-> ";
+//            }
+//
+//        }
+//
+//        for(int i=1;i<=28;i++){
+//
+//            for( int a : adj[i]){
+//                cout<< a<<" ";
+//            }
+//
+//        }
     }
 };
 int main() {
