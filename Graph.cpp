@@ -28,7 +28,7 @@ public:
             for(int a : adjList[i]) {
                 cout << a << ",";
             }
-              cout<<endl;
+            cout<<endl;
         }
     }
 
