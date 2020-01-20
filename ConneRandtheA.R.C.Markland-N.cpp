@@ -4,52 +4,58 @@
 
 #include<bits/stdc++.h>
 
-using namespace std;
 
-int main(){
+using namespace std;
+const int N = 1e6 + 5;
+typedef long long ll;
+
+
+
+int main() {
 
     int t;
-    cin>>t;
+    cin >> t;
 
-    while(t-->0){
+    while (t-- > 0) {
 
-        int n,s,k;
-        long long  m[100000];
-        cin>>n>>s>>k;
-        int MIN=INT_MAX;
+        ll n, s, k;
+        ll MIN = INT_MAX;
+        cin >> n >> s >> k;
+        map<ll, int> m;
 
 
-        for(int i=0;i<k;i++){
-            int val;
-            cin>>val;
+        for (ll i = 0; i < k; i++) {
+            ll val;
+            cin >> val;
             m[val]++;
         }
 
-        if(m[s]==0){
-            MIN=0;
-        }else{
-            int uBound=s+1;
-            int lBound=s-1;
-            int count=0;
-            while(uBound!=n+1){
+        if (m[s] == 0) {
+            MIN = 0;
+        }
+        else {
+            ll uBound = s + 1;
+            ll lBound = s - 1;
+            ll count = 0;
+            while (uBound != n + 1) {
 
                 count++;
-                if(m[uBound]==0){
-                    MIN=min(MIN,count);
-                    cout<<"MIN of Upper Bound"<<MIN<<endl;
+                if (m.find(uBound)==m.end()) {
+                    MIN = min(MIN, count);
+                    //cout << "MIN of Upper Bound" << MIN << endl;
                     break;
                 }
                 uBound++;
 
             }
-                count=0;
+            count = 0;
 
-            while(lBound!=0){
+            while (lBound != 0) {
 
                 count++;
-                if(m[lBound]==0){
-                    MIN=min(MIN,count);
-                    cout<<"MIN of Lower Bound"<<MIN<<endl;
+                if (m.find(lBound) == m.end()) {
+                    MIN = min(MIN, count);
+                    //cout << "MIN of Lower Bound" << MIN << endl;
                     break;
                 }
                 lBound--;
@@ -57,6 +63,6 @@ int main(){
             }
         }
 
-        cout<<MIN<<endl;
+        cout << MIN << endl;
     }
 }
