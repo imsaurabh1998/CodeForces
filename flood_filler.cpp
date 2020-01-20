@@ -27,7 +27,7 @@ public:
 
 void floodFiller(int mat[][50],int i,int j, int chr){
 
-    if(i>=0|| j>=0 || i<=R|| j<=C  ||mat[i][j]!=chr  ) return;
+    if(i>=0|| j>=0 || i<=R || j<=C  ||mat[i][j]!=chr  ) return;
 
     mat[i][j]='R';
 
