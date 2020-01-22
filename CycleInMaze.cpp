@@ -10,8 +10,8 @@ using namespace std;
 int d[10005][10005];
 char s[10005][10005];
 string dir[]={"D","U","L","R"};
-int fx[]={0,1,0,-1};
-int fy[]={1,0,-1,0};
+int fx[]={1,-1,0,0};
+int fy[]={0,0,-1,1};
 
 void dfs(int x,int y){
     memset(d,-1,sizeof(d));
