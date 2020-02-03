@@ -19,7 +19,7 @@ int main(){
         string str;
         cin>>str;
 
-        if(n==1){
+        if(sLength==1){
             cout<<-1<<endl;
 
         }
@@ -33,7 +33,7 @@ int main(){
             if(tSum%2==0 && (str[sLength-1]-'0')%2!=0){
                 cout<<str<<endl;
             }else{
-                while(sLength>2) {
+                while(sLength>1) {
                     tSum -= str[sLength - 1] - '0';
                     str = str.substr(0, sLength - 1);
                     sLength--;
@@ -43,7 +43,7 @@ int main(){
                         break;
                     }
                 }
-                if(sLength==2){
+                if(sLength==1){
                     cout<<-1<<endl;
                 }
             }
