@@ -12,9 +12,17 @@ int main(){
     cin>>n;
 
     vector<int> list(n);
+    int num=INT_MIN;
     for(auto &a : list){
         cin>>a;
+        num=max(num,a);
     }
 
-    int max
+    int mx=0;
+    //cout<<num<<endl;
+    for(int a : list){
+
+        mx=max(mx,num^a);
+    }
+    cout<<mx<<endl;
 }
