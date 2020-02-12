@@ -19,7 +19,7 @@ int main(){
     }
 
     int mx=0;
-    //cout<<num<<endl;
+    //cout<<num<<endl;K
     for(int a : list){
 
         mx=max(mx,num^a);
