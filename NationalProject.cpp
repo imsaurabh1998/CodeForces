@@ -23,13 +23,14 @@ int main(){
         if(k<=g) cout<<k<<endl;
         else if(mid<=g) cout<<mid<<endl;
         else {
-            countDays=g;
-            mid--;
+//            countDays=g;
+//            mid--;
 
             ll quotent=mid/g;
-            ll rem=(mid+1)%g;
+            ll rem=mid%g;
 
-            countDays+=((quotent-1)*g)+(quotent*b)+rem;
+            countDays+=(quotent*g)+(quotent*b)+rem;
+            if(rem==0) countDays-=b;
             cout<<countDays<<endl;
         }
 
