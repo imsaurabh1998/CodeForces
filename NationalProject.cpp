@@ -31,7 +31,7 @@ int main(){
 
             countDays+=(quotent*g)+(quotent*b)+rem;
             if(rem==0) countDays-=b;
-            cout<<countDays<<endl;
+            cout<<max(countDays,k)<<endl;
         }
 
     }
