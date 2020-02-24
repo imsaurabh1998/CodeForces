@@ -25,7 +25,6 @@ bool selfRev(string s) {
     return false;
 
 }
-
 bool checkRev(string s) {
 
     string t = s;
