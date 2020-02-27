@@ -30,12 +30,8 @@ int main(){
                     tempStep+=abs(c-third);
                 }
 
-                if(ans>tempStep){
-                    ans=tempStep;
-                    num1=i;
-                    num2=j;
-                    num3=third;
-                }
+                if(ans>tempStep) ans=tempStep,num1=i,num2=j,num3=third;
+
 
             }
 
