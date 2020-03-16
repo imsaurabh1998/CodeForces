@@ -12,18 +12,25 @@ int main(){
 
     while(n--){
 
-        long long lCount=1, mVal=0;
-        string a;
-        cin>>a;
+        string s;
+        cin >> s;
 
-        for(int i=a.length()-1;i>=0;--i){
+        int count = 1;
+        int maxNeed = INT_MIN;
 
-            if(a[i]=='L')lCount++;
-            else{
-                mVal=max(mVal,lCount);
-                lCount=1;
+        for (char a : s)
+        {
+            if (a == 'L') count++;
+            else
+            {
+                maxNeed = max(maxNeed, count);
+                count = 1;
             }
         }
+        maxNeed = max(maxNeed, count);
+        if (maxNeed < 0) cout << count << endl;
+        else
+            cout << maxNeed << endl;
     }
 }
 
