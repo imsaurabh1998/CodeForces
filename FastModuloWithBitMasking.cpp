@@ -18,5 +18,5 @@ long long mod(int a, int b, long long m){
     return res;
 }
 int main(){
-cout<<mod(2,3,100005);
+    cout<<mod(2,3,100005);
 }
