@@ -27,8 +27,6 @@ int main(){
            j++;
 
        }
-
-
          ans+=(((j-i)*(j-i+1))/2)%mod;
        s.erase(arr[i]);
    }
