@@ -1,0 +1,3 @@
+Value of resultant: abc 1
+Value of resultant:  0
+0
